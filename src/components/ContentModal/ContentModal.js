@@ -51,7 +51,7 @@ export default function ContentModal({ children, media_type, id }) {
   useEffect(() => {
     fetchData();
     fetchVideo();
-  },[])
+  }, [])
 
   const handleOpen = () => {
     setOpen(true);
@@ -63,11 +63,11 @@ export default function ContentModal({ children, media_type, id }) {
 
   return (
     <div>
-      <div 
+      <div
         className="media"
-        type="button" 
+        type="button"
         onClick={handleOpen}>
-          { children }
+        {children}
       </div>
       <Modal
         aria-labelledby="transition-modal-title"
@@ -82,7 +82,7 @@ export default function ContentModal({ children, media_type, id }) {
         }}
       >
         <Fade in={open}>
-        {content && (
+          {content && (
             <div className={classes.paper}>
               <div className="ContentModal">
                 <img

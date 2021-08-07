@@ -33,7 +33,7 @@ const Search = () => {
 
   const fetchSearch = async () => {
     const { data } = await axios.get(`https://api.themoviedb.org/3/search/${type ? "tv" : "movie"}?api_key=26ba5e77849587dbd7df199727859189&language=en-US&query=${searchText}&page=${page}&include_adult=false`);
-   
+  console.log(data, 'data sera')
     setContent(data.results);
     setNumOfPage(data.total_pages);
   };
@@ -44,6 +44,7 @@ const Search = () => {
         // eslint-disable-next-line 
   },[page, type])
 
+  console.log(content)
   return (
     <div>
       <ThemeProvider theme={darkTheme}>

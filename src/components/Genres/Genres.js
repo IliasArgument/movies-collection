@@ -8,9 +8,15 @@ const Genres = ({
   genres,
   setGenres,
   setPage,
+  page,
   type,
 }) => {
+
+  console.log(selectedGenres, 'selectedGenres')
+  console.log(genres, 'genres')
+  console.log(page, 'page')
   const handleAdd = (genre) => {
+
     setSelectedGenres([...selectedGenres, genre]);
     setGenres(genres.filter((g) => g.id !== genre.id));
     setPage(1);
@@ -23,6 +29,7 @@ const Genres = ({
     setGenres([...genres, genre]);
     setPage(1);
   };
+
   console.log(genres, 'gen')
   const fetchGenres = async () => {
     const { data } = await axios.get(

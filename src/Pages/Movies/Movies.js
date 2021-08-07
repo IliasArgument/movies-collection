@@ -14,6 +14,9 @@ const Movies = () => {
   const [genres, setGenres] = useState([]);
   const genreForUrl = useGenre(selectedGenres);
 
+  console.log(selectedGenres, 'selectedGenres  22')
+    console.log(genres, 'genres 22')
+
   const fetchMovies = async () => {
     const { data } = await axios.get(
       `https://api.themoviedb.org/3/discover/movie?api_key=26ba5e77849587dbd7df199727859189&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=${page}&with_genres=${genreForUrl}`
@@ -34,6 +37,7 @@ const Movies = () => {
         genres={genres}
         setGenres={setGenres}
         setPage={setPage}
+        page={page}
         type="movie"
       />
       <div className="trending">
